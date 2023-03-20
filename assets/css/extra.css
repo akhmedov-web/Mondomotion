@@ -129,7 +129,7 @@
     width: 100%;
 }
 .e_field__body{
-    min-width: 530px;
+    min-width: 630px;
     height: auto;
 }
 .e_form label{  
@@ -294,5 +294,9 @@ border:1px solid green !important;
     }
     .year_one, .year_three{
         transform: translateX(0%) !important;
+    }
+    .e_field__body{
+        min-width: 275px;
+        height: auto;
     }
 }
