@@ -194,6 +194,37 @@ document.addEventListener('DOMContentLoaded', () => {
     aos_init();
   });
 
+    // post
+    const isName=document.querySelector("#isName");
+    const isPhone=document.querySelector("#isPhone");
+    const postBtn=document.querySelector('.postBtn');
+    const thanksLink=document.querySelector('#thanks-link');
+    const fillTheFormText=document.querySelector('.fillTheFormText');
+    const data={full_name:"",phone:""};
+    const url='https://inc.fsoft.uz/api/v1/order/create';
+    isName.addEventListener('input',(e)=>data.full_name=e.target.value);
+    isPhone.addEventListener('input',(e)=>data.phone=e.target.value);
+    postBtn.addEventListener('click',()=>getData());
+    async function getData(){
+    if(data.full_name.length>0 && data.phone.length>0){
+      fetch(url,{
+        method:'POST',
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify(data)
+      })
+      .then(response=>response.json())
+      .then(resData=>console.log(resData))
+      .catch(err=>console.log(err))
+      thanksLink.href="/thanks-page/thanks.html";
+    }else{
+      isName.classList.add('fillInput');
+      isPhone.classList.add('fillInput');
+      fillTheFormText.classList.remove('d-none');
+    }
+    }
+
   /**
    * Stepper
   */
@@ -233,12 +264,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       })
     }
-  
-
-  // post
-  const isName=document.querySelector("#isName");
-  const isPhone=document.querySelector("#isPhone");
-  const data={full_name:"",phone:""}
-  isName.addEventListener('change',(e)=>data.full_name=e.target.value);
-  isPhone.addEventListener('change',(e)=>data.phone=e.target.value);
 });

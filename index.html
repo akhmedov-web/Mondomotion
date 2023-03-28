@@ -262,7 +262,7 @@
         <div class="container">
 
           <div class="row position-relative justify-content-between">
-            <div class="col-xl-3 col-lg-3 d-xl-flex d-lg-flex d-none">
+            <div class="col-xl-3 col-lg-3 d-xl-flex d-lg-none d-none">
 
               <img src="./assets/img/truck2.svg" alt="drive" class="car">
             </div>
@@ -468,7 +468,7 @@
             </div>
           </div>
           <div class="row justify-content-center">
-            <div class="e-field p-5 mt-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="e-field p-xl-5 p-4 mt-4" data-aos="fade-up" data-aos-delay="200">
               <div class="e_field__steppers d-flex justify-content-around align-items-center">
                 <div class="stepper">1</div>
                 <div class="stepper_barrier"></div>
@@ -548,19 +548,15 @@
                   </div>
                   <div class="e_field__body mt-3">
                     <div class="d-flex flex-column e_form my-2">
-                      <label for="">Full Name</label>
+                      <label for="" class="d-flex justify-content-between">Full Name <span class="fillTheFormText d-none"><i class="bi bi-exclamation-triangle"></i> Fill the form</span></label>
                       <input type="text" placeholder="Full Name" id="isName">
                     </div>
                     <div class="d-flex flex-column e_form  my-2">
                       <label for="">Phone number</label>
                       <input type="text" placeholder="Only for USA" id="isPhone">
                     </div>
-                    <div class="d-flex flex-column e_form  my-2">
-                      <label for="">Email Address</label>
-                      <input type="email" placeholder="Email address">
-                    </div>
-                    <div class="e_field_buttons pe-xl-5 mt-3">
-                      <a href="/thanks-page/thanks.html"><button class="e_field_button">Apply</button></a>
+                    <div class="e_field_buttons pe-xl-5 mt-4">
+                      <a id="thanks-link"><button class="postBtn">Apply</button></a>
                     </div>
                   </div>
                 </div>
